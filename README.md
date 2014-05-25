@@ -1,13 +1,28 @@
 README
 ========================================================
+####The run_analysis.R code does the following:
 
+*####Merges the training and the test sets to create one data set
+
+*####Extracts only the measurements on the mean and standard deviation for each measurement
+
+*####Uses descriptive activity names to name the activities in the data set
+
+*####Appropriately labels the data set with descriptive activity names
+
+*####Creates a second, independent tidy data set with the average of each variable for each activity and each subject
+
+```{r}
 #Setting the working directory
 
 setwd("C:/Users/user/Desktop/Coursera/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset")
 
-#Reading all the necessary files
+features<-read.table("features.txt")
 
-features<-read.table("features.txt") 
+#Checking how many cols and rows has "features"
+
+dim(features)     	 					 
+
 subtest<-read.table("subject_test.txt")
 xtest<-read.table("X_test.txt")
 ytest<-read.table("y_test.txt")
@@ -112,3 +127,9 @@ dim(final_table)
 #Saving the tidydata table as a .txt file in the working directory
 
 write.table(final_table, file = "tidydata.txt")  
+
+```
+
+
+
+
